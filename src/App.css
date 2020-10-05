@@ -1,38 +1,188 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Poppins&display=swap");
+/* CSS rules to specify families */
+
+/* font-family: 'Arvo', serif;
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  /* box-sizing: border-box; */
+  transition: 0.2s color ease-in-out, 0.2s background-color ease-in-out;
+}
+
+.app {
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 3% 5%;
+}
+.app__input {
+  width: auto;
+  max-width: 100%;
+  height: 60px;
+  background-color: #a3aab9;
+  outline: none;
+  border: none;
+  border-radius: 27px;
+  margin: 10px;
+  /* text-indent: 24px; */
+  padding: 3% 4%;
+  font-size: 22px;
+}
+.app__body {
+  display: flex;
+  flex-direction: column;
+  padding: 3.5%;
+  border-radius: 18px;
+  margin-top: 30px;
+  /* overflow: hidden; */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  justify-content: space-evenly;
+}
+.task {
+  width: 100%;
+  height: 80px;
+  position: relative;
+  /* text-indent: 40px; */
+  border-radius: 27px;
+  display: flex;
+  padding: 3% 4%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: #dae1f0;
+}
+.task__p {
+  font-size: 22px;
+  padding: 2.5%;
+  /* text-indent: 20px; */
+  /* width: 100%; */
+}
+
+.checkbox-round {
+  width: 1.8em;
+  height: 1.8em;
+  background-color: white;
+  position: absolute;
+  display: inline-block;
+  margin: 3px;
+  left: -29px;
+  margin: 25px;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.checkbox-round:checked {
+  background-color: rgb(68, 204, 55);
+}
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(96, 170, 212);
+  border-radius: 18px;
+}
+.stats h1 {
+  font-family: "Arvo", serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.icon {
+  position: absolute;
+  transition: 200ms color ease-in;
+  cursor: pointer;
+  right: -20px;
+}
+.icon:hover {
+  color: red;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.slider.round:before {
+  border-radius: 50%;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(247, 113, 3);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #464c50;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Header */
+.header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  height: 80px;
+  margin-bottom: 80px;
+  justify-content: space-between;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header__heading h1 {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-right: 10px;
+  font-weight: 900;
 }
